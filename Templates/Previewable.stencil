@@ -1,0 +1,4 @@
+
+{% for type in types.based.PreviewProvider|struct %}
+extension {{ type.name }}: Previewable {}                
+{% endfor %}

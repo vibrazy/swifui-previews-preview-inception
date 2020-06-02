@@ -1,0 +1,16 @@
+// MARK: - Sourcery Magic 2
+
+extension PreviewShowcaseListView {
+	var previews: [ShowcaseType] {
+		[
+            .viewAll([
+                {% for type in types.based.PreviewProvider|struct %}
+                {{ type.name }}().asPreview,                
+                {% endfor %}
+			]),
+            {% for type in types.based.PreviewProvider|struct %}
+            .preview({{ type.name }}().asPreview),                
+            {% endfor %}			
+		]
+	}
+}
